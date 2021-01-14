@@ -1,4 +1,4 @@
-<section class="hero-bva {% unless section.settings.content_alignment == blank %}flex-align-{{ section.settings.content_alignment }}{% endunless %}" data-section-id="{{ section.id }}" style="{% unless section.settings.hero_image == blank %}background-image: url({{ section.settings.hero_image | img_url: 'master' }});{% endunless %}">
+<section class="hero-bva {% unless section.settings.content_alignment == blank %}flex-align-{{ section.settings.content_alignment }}{% endunless %}" data-section-id="{{ section.id }}">
   
     <div class="hero-bva-wrapper">
       {% unless section.settings.hero_title == blank %}
@@ -17,6 +17,19 @@
     </div>
 </section>
 <style>
+  .hero-bva {
+    {% unless section.settings.hero_image == blank %}
+      background-image: url({{ section.settings.hero_image | img_url: 'master' }});
+    {% endunless %}
+  }
+
+  @media only screen and (max-width: 768px) { 
+    .hero-bva {
+      {% unless section.settings.mobile_hero_image == blank %}
+        background-image: url({{ section.settings.mobile_hero_image | img_url: 'master' }});
+      {% endunless %}
+    }
+  }
 
 </style>
 {% schema %}
@@ -27,7 +40,13 @@
       "type": "image_picker",
       "id": "hero_image",
       "label": "Background Hero Image",
-      "info": "Please upload a high definition image as you background"
+      "info": "Please upload a high definition image as you background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_hero_image",
+      "label": "Mobile Hero Image",
+      "info": "Please upload a high definition image as you mobile background image"
     },
     {
       "type": "select",

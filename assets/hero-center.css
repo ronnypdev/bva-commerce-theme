@@ -89,4 +89,21 @@
     padding-top: 0 !important;
   }
 }
-/* @media only screen and (max-width: 46.85em) {} */
+@media only screen and (max-width: 768px) {
+  .hero-bva .hero-bva-title {
+    font-size: 36px;
+  }
+  .hero-bva .hero-bva-description {
+    font-size: 18px;
+  }
+  .flex-align-left,
+  .flex-align-right {
+    text-align: center;
+    align-items: center;
+  }
+  .flex-align-left .hero-bva-description,
+  .flex-align-right .hero-bva-description {
+    text-align: center;
+    width: 350px;
+  }
+}
