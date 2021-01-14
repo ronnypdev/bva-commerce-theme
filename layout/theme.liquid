@@ -23,6 +23,8 @@
   <link rel="preload" as="font" href="{{ base_font_bold | font_url }}" type="font/woff2" crossorigin>
   <link rel="preload" href="{{ 'theme.js' | asset_url }}" as="script">
   <link rel="preload" href="{{ 'lazysizes.js' | asset_url }}" as="script">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  {{- 'hero-center.css' | asset_url | stylesheet_tag -}}
 
   {%- if canonical_url != blank  -%}
     <link rel="canonical" href="{{ canonical_url }}">
