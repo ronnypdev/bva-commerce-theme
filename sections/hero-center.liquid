@@ -1,5 +1,5 @@
 <section class="hero-bva {% unless section.settings.content_alignment == blank %}flex-align-{{ section.settings.content_alignment }}{% endunless %}" data-section-id="{{ section.id }}">
-  
+
     <div class="hero-bva-wrapper">
       {% unless section.settings.hero_title == blank %}
         <h1 class="hero-bva-title">{{ section.settings.hero_title }}</h1>
@@ -21,9 +21,13 @@
     {% unless section.settings.hero_image == blank %}
       background-image: url({{ section.settings.hero_image | img_url: 'master' }});
     {% endunless %}
+
+    {% unless section.settings.bg_color == blank %}
+      background-color: {{ section.settings.bg_color }};
+    {% endunless %}
   }
 
-  @media only screen and (max-width: 768px) { 
+  @media only screen and (max-width: 768px) {
     .hero-bva {
       {% unless section.settings.mobile_hero_image == blank %}
         background-image: url({{ section.settings.mobile_hero_image | img_url: 'master' }});
@@ -47,6 +51,13 @@
       "id": "mobile_hero_image",
       "label": "Mobile Hero Image",
       "info": "Please upload a high definition image as you mobile background image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "default": "#000080",
+      "label": "Background Hero Color",
+      "info": "In case there's no image available please select a background color"
     },
     {
       "type": "select",
